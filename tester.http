@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:4004
+
+###
+GET {{baseUrl}}/odata/v4/my/helloworld(input='World')
