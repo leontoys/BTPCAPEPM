@@ -1,0 +1,4 @@
+- cf login
+- cds add hana
+- cds build --production
+- cds deploy --to hana:mickey
