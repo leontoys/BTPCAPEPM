@@ -32,4 +32,37 @@ context master {
         bankName : String(64);
     }
 
+    entity businesspartner : cuid {
+        key node_key : common.Guid;
+        bp_role : String(32);
+        email_address : String(105);
+        phone_number : String(32);
+        fax_number : String(32);
+        web_address : String(44);
+        //creating assosciation to address - loose coupling
+        //this creates a field with name - current field_primary key
+        //ie, address_guid_node_key
+        address_guid : Association to address;
+        bp_id : String(32);
+        company_name : String(250);
+    }
+
+    entity address {
+        key node_key : common.Guid;
+        city : String(44);
+        postal_code : String(8);
+        street : String(44);
+        building : String(128);
+        country : String(44);
+        address_type : String(44);
+        val_start_date : Date;
+        val_end_date : Date;
+        latitude : Decimal;
+        longitude : Decimal;
+        //back linking
+        //$self refers to primary key of current entity
+        businesspartner : Association to one businesspartner on
+        businesspartner.address_guid = $self;
+    }
+
 }
