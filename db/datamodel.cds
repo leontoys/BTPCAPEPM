@@ -65,4 +65,24 @@ context master {
         businesspartner.address_guid = $self;
     }
 
+    entity product {
+        key node_key : common.Guid;
+        product_id : String(32);
+        type_code : String(2);
+        category : String(32);
+        //so that we can create different description based on language
+        description : localized String(255);
+        supplier_guid : Association to master.businesspartner;
+        tax_tariff_code : Integer;
+        measure_unit : String(2);
+        weight_measure : Decimal(5,2);
+        weight_unit : String(2);
+        currency_code : String(4);
+        price : Decimal(15, 2);
+        width : Decimal(5, 2);
+        depth : Decimal(5, 2);
+        height : Decimal(5, 2);
+        dim_unit : String(2);
+    }
+
 }
