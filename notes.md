@@ -1,3 +1,10 @@
+# To compile CDL to DDL
+cds compile db/schema.cds --to sql
+cds compile db --to sql
+- <field> : Assosciation to <entity> will create a field <field_key>,
+- but when we do backlinking Association to <entity> on it won't create
+- also association also won't create
+
 # Steps to connect to sqlite db
 - add { "cds": { "requires": {
    "db": {

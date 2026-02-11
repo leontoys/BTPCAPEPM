@@ -17,6 +17,13 @@ type AmountT : Decimal(10, 2)@(
     sap.unit : 'CURRENCY_CODE'
 );
 
+type Amount : {
+    currency : Currency;
+    gross_amount : AmountT @title : 'Gross Amount';
+    net_amount : AmountT @title : 'Net Amount';
+    tax_amount : AmountT @title : 'Tax Amount'
+}
+
 type PhoneNumber : String(30);
 
 type Email : String(255);

@@ -32,7 +32,7 @@ context master {
         bankName : String(64);
     }
 
-    entity businesspartner : cuid {
+    entity businesspartner  {
         key node_key : common.Guid;
         bp_role : String(32);
         email_address : String(105);
@@ -61,6 +61,7 @@ context master {
         longitude : Decimal;
         //back linking
         //$self refers to primary key of current entity
+        //this will not create a field 
         businesspartner : Association to one businesspartner on
         businesspartner.address_guid = $self;
     }
@@ -73,6 +74,7 @@ context master {
         //so that we can create different description based on language
         //creates another table product_texts with locale,key and description
         description : localized String(255);
+        //creates supplier_guid_node_key
         supplier_guid : Association to master.businesspartner;
         tax_tarif_code : Integer;
         measure_unit : String(2);
@@ -86,4 +88,25 @@ context master {
         dim_unit : String(2);
     }
 
+}
+
+context transaction {
+    entity purchaseorder : cuid, common.Amount {
+        po_id : String(40);
+        partner_guid : Association to master.businesspartner;
+        lifecycle_status : String(1);
+        overall_status : String(1);
+        //composition - tight coupling
+        //this will not create 
+        items : Composition of many poitems on 
+        items.parent_key = $self;
+    }
+
+    entity poitems : cuid, common.Amount {
+        //creates field parent_key_id
+        parent_key : Association to purchaseorder;
+        po_item_pos : Integer;
+        //creates field product_guid_node_key
+        product_guid : Association to master.product;
+    }
 }
