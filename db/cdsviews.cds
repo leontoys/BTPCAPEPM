@@ -4,22 +4,65 @@ namespace cappo.cds;
 using { liyon.db.master, liyon.db.transaction  } from './datamodel';
 
 context cdsviews {
-    
-    define view POWorklist as 
+    //for dbs to respect the case, we need to put the names in ![]
+    //in sqlite it works without this
+    define view ![POWorklist] as 
         select from transaction.purchaseorder {
-            key po_id as PurchaseOrderId,
-            key items.po_item_pos as ItemPosition,
-            partner_guid.bp_id as ParnterId,
-            partner_guid.company_name as CompanyName,
-            gross_amount as GrossAmount,
-            net_amount as NetAmount,
-            tax_amount as TaxAmount,
-            currency as CurrencyCode,
-            overall_status as Status,
-            items.product_guid.product_id as ProductId,
-            items.product_guid.description as ProductName,
-            partner_guid.address_guid.city as City,
-            partner_guid.address_guid.country as Country
+            key po_id as ![PurchaseOrderId],
+            key items.po_item_pos as ![ItemPosition],
+            partner_guid.bp_id as ![ParnterId],
+            partner_guid.company_name as ![CompanyName],
+            gross_amount as ![GrossAmount],
+            net_amount as ![NetAmount],
+            tax_amount as ![TaxAmount],
+            currency as ![CurrencyCode],
+            overall_status as ![Status],
+            items.product_guid.product_id as ![ProductId],
+            items.product_guid.description as ![ProductName],
+            partner_guid.address_guid.city as ![City],
+            partner_guid.address_guid.country as ![Country]
+        };
+
+        define view ![ProductValueHelp] as 
+        select from master.product{
+            product_id as ![ProductId],
+            description as ![Description]
+        };
+
+        define view ![ItemView] as 
+        select from transaction.poitems{
+            parent_key.partner_guid.node_key as ![CustomerId],
+            product_guid.node_key as ![ProductId],
+            currency as ![CurrencyCode],
+            gross_amount as ![GrossAmount],
+            net_amount as ![NetAmount],
+            tax_amount as ![TaxAmount],
+            parent_key.overall_status as ![Status]
+        };
+
+        //mixin - lazy loading - it will load dependent view only on demand
+        define view ProductView as select from master.product
+        mixin{
+            po_order : Association[*] to ItemView on po_order.ProductId = $projection.ProductId
+        }
+        into{
+            node_key as ![ProductId],
+            description as ![Description],
+            category as ![Category],
+            price as ![Price],
+            supplier_guid.bp_id as ![SupplierId],
+            supplier_guid.company_name as ![SupplierName],
+            supplier_guid.address_guid.city as ![City],
+            supplier_guid.address_guid.country as ![Country],
+            //exposed assosciation
+            po_order as ![To_Items]
         }
 
+        define view CProductValuesView as 
+        select from ProductView{
+            ProductId,
+            Country,
+            round(sum(To_Items.GrossAmount),2) as ![TotalPurchaseAmount] : Decimal(10,2),
+            To_Items.CurrencyCode as ![CurrencyCode]
+        } group by ProductId,Country, To_Items.CurrencyCode;
 }
