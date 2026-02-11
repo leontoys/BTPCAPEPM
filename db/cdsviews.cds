@@ -43,7 +43,9 @@ context cdsviews {
         //mixin - lazy loading - it will load dependent view only on demand
         define view ProductView as select from master.product
         mixin{
-            po_order : Association[*] to ItemView on po_order.ProductId = $projection.ProductId
+            //view on view, we can also give Association to [*]
+            //left side refers to item view above, and right side refers to the list of fields below
+            po_order : Association to many ItemView on po_order.ProductId = $projection.ProductId
         }
         into{
             node_key as ![ProductId],
@@ -54,7 +56,7 @@ context cdsviews {
             supplier_guid.company_name as ![SupplierName],
             supplier_guid.address_guid.city as ![City],
             supplier_guid.address_guid.country as ![Country],
-            //exposed assosciation
+            //exposed assosciation @runtime data will be loaded on demand lazy loading  
             po_order as ![To_Items]
         }
 

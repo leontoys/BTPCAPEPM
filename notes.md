@@ -5,6 +5,9 @@ cds compile db --to sql
 - but when we do backlinking Association to <entity> on it won't create
 - also association also won't create
 
+# mixin
+- key word for loose coupling , lazy loading, load data only when requested
+
 # Steps to connect to sqlite db
 - add { "cds": { "requires": {
    "db": {
