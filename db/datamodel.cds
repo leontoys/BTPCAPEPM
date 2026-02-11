@@ -71,9 +71,10 @@ context master {
         type_code : String(2);
         category : String(32);
         //so that we can create different description based on language
+        //creates another table product_texts with locale,key and description
         description : localized String(255);
         supplier_guid : Association to master.businesspartner;
-        tax_tariff_code : Integer;
+        tax_tarif_code : Integer;
         measure_unit : String(2);
         weight_measure : Decimal(5,2);
         weight_unit : String(2);
