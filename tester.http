@@ -76,3 +76,47 @@ GET  {{baseUrl}}/odata/v4/CatalogService/ProductViewSet
 
 ### to get item info - big list can try with single item to reduce load
 GET  {{baseUrl}}/odata/v4/CatalogService/ProductViewSet?$expand=To_Items
+
+###POs
+GET  {{baseUrl}}/odata/v4/CatalogService/POs
+
+###Single PO
+GET  {{baseUrl}}/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1978999
+
+###Single PO
+GET  {{baseUrl}}/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1978999?$expand=items
+
+
+### POST operation - DEEP Insert
+POST {{baseUrl}}/odata/v4/CatalogService/POs
+Content-Type: application/json
+
+{
+  "currency_code": "EUR",
+  "gross_amount": 3913.91,
+  "net_amount": 3289,
+  "tax_amount": 624.91,
+  "po_id": "300000000",
+  "partner_guid_node_key": "74867AD200E41EDBA5D8B06885B04052",
+  "lifecycle_status": "N",
+  "overall_status": "P",
+  "items": [
+    {
+      "currency_code": "ARS",
+      "gross_amount": 154.7,
+      "net_amount": 130,
+      "tax_amount": 24.7,
+      "po_item_pos": 10,
+      "product_guid_node_key": "74867AD200E41EDBA5D8B06B26F60052"
+    },
+    {
+      "currency_code": "ARS",
+      "gross_amount": 402.22,
+      "net_amount": 338,
+      "tax_amount": 64.22,
+      "po_item_pos": 20,
+      "product_guid_node_key": "74867AD200E41EDBA5D8B06B26F06052"
+    }
+
+  ]
+}

@@ -29,10 +29,11 @@ context cdsviews {
             description as ![Description]
         };
 
+        //added key to Item View , parent key and product guid for this to work
         define view ![ItemView] as 
         select from transaction.poitems{
-            parent_key.partner_guid.node_key as ![CustomerId],
-            product_guid.node_key as ![ProductId],
+            key parent_key.partner_guid.node_key as ![CustomerId],
+            key product_guid.node_key as ![ProductId],
             currency as ![CurrencyCode],
             gross_amount as ![GrossAmount],
             net_amount as ![NetAmount],
