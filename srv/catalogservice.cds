@@ -11,7 +11,7 @@ service CatalogService @(path:'CatalogService') {
 
     entity BusinessParnterSet as projection on master.businesspartner;
 
-    //entity ProductSet as projection on master.product;
+    //entity ProductSet as projection on master.product;- need to revist the error
 
     entity POs as projection on transaction.purchaseorder;
 

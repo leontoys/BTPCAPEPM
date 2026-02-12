@@ -73,3 +73,6 @@ DELETE   {{baseUrl}}/odata/v4/CatalogService/EmployeeSet/6403b3e4-e2b8-4c3d-952d
 
 ### mixin with product view
 GET  {{baseUrl}}/odata/v4/CatalogService/ProductViewSet
+
+### to get item info - big list can try with single item to reduce load
+GET  {{baseUrl}}/odata/v4/CatalogService/ProductViewSet?$expand=To_Items
