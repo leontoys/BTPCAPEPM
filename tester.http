@@ -2,3 +2,74 @@
 
 ###
 GET {{baseUrl}}/odata/v4/my/helloworld(input='World')
+
+
+### service document
+GET {{baseUrl}}/odata/v4/CatalogService
+
+### metadata document
+GET {{baseUrl}}/odata/v4/CatalogService/$metadata
+
+### to get all employees
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet
+
+### pagination - first parameter with ? next ones with &
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$top=2
+
+### skip
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$top=2&$skip=2
+
+### select only few fields - to reduce volume of data
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$select=nameFirst,nameLast,email
+
+### where condition
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$filter=sex eq 'F'
+
+
+### where condition pattern
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$filter=Contains(nameFirst,'ch')
+
+### single employee
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C198A7FB
+
+### single employee another syntax
+GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet('02BD2137-0890-1EEA-A6C2-BB55C198A7FB')
+
+### POST operation
+POST {{baseUrl}}/odata/v4/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+  "nameFirst": "A R",
+  "nameMiddle": null,
+  "nameLast": "Rahman",
+  "nameInitials": null,
+  "sex": "M",
+  "language": "E",
+  "phoneNumber": null,
+  "email": "arrahman@info",
+  "loginName": "ARR",
+  "currency_code": "USD",
+  "salaryAmount": 1000000,
+  "accountNumber": "76543219",
+  "bankId": "66665555",
+  "bankName": "My Bank of London"
+}
+
+### PATCH - Rememeber no comma after the last for valid json
+PATCH  {{baseUrl}}/odata/v4/CatalogService/EmployeeSet/6403b3e4-e2b8-4c3d-952d-9ff5f2caf841
+Content-Type: application/json
+
+{
+  "salaryAmount": 100000
+}
+
+### READ - newly created employee
+GET  {{baseUrl}}/odata/v4/CatalogService/EmployeeSet/6403b3e4-e2b8-4c3d-952d-9ff5f2caf841
+
+
+### DELETE - newly created employee
+DELETE   {{baseUrl}}/odata/v4/CatalogService/EmployeeSet/6403b3e4-e2b8-4c3d-952d-9ff5f2caf841
+
+### mixin with product view
+GET  {{baseUrl}}/odata/v4/CatalogService/ProductViewSet
