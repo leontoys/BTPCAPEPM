@@ -19,5 +19,9 @@ service CatalogService @(path:'CatalogService') {
 
     entity ProductViewSet as projection on cdsviews.ProductView;
 
+    //unbound function
+    //to return multiple write array of
+    function mostExpensiveOrder() returns POs
+
 }
 

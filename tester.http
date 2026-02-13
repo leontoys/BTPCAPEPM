@@ -120,3 +120,7 @@ Content-Type: application/json
 
   ]
 }
+
+//call function
+###
+GET  {{baseUrl}}/odata/v4/CatalogService/mostExpensiveOrder()
