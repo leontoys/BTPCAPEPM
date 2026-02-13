@@ -11,4 +11,9 @@ module.exports = cds.service.impl ( async function(){
             req.error(500,"Hello Mate! Salary cannot be above 1 million")
         }
     })
+
+
+    this.after('READ',EmployeeSet,(req,res)=>{
+        console.log('---after read---',JSON.stringify(res.results))
+    })
  }) 
