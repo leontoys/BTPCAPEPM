@@ -129,3 +129,6 @@ GET  {{baseUrl}}/odata/v4/CatalogService/mostExpensiveOrder()
 ###
 POST {{baseUrl}}/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1978999/CatalogService.boost
 Content-Type: application/json
+
+###
+GET {{baseUrl}}/odata/v4/my/EmployeeSrv
