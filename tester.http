@@ -15,6 +15,10 @@ GET {{baseUrl}}/odata/v4/CatalogService/$metadata
 GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet
 Authorization: Basic liyon:
 
+### to get all employees
+GET {{baseUrl}}/odata/v4/CatalogService/AddressSet
+Authorization: Basic marx:
+
 ### pagination - first parameter with ? next ones with &
 GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$top=2
 
@@ -131,6 +135,8 @@ GET  {{baseUrl}}/odata/v4/CatalogService/mostExpensiveOrder()
 ###
 POST {{baseUrl}}/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1978999/CatalogService.boost
 Content-Type: application/json
+Authorization: Basic marx:
+
 
 ###
 GET {{baseUrl}}/odata/v4/my/EmployeeSrv

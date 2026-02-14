@@ -9,7 +9,7 @@ service CatalogService @(path:'CatalogService',
 
     entity EmployeeSet 
     @(restrict : [
-        {grant:['READ'],to:'Viewer'},
+        {grant:['READ'],to:'Viewer',where:'bankName = $user.BankName'},
         {grant:['WRITE'],to:'Editor'}
 
     ])

@@ -27,3 +27,7 @@ cds compile db --to sql
 # To configure roles
 - Application Security Descriptor Configuration Syntax
 - https://help.sap.com/docs/SAP_HANA_PLATFORM/cf8b4c5847374960a68b55cb86eae013/6d3ed64092f748cbac691abc5fe52985.html?locale=en-US
+- cds add xsuaa
+- npm install
+- copy and update xs-security.json
+- create mock strategy and test users with roles in package.json

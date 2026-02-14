@@ -30,10 +30,18 @@
     "strategy" : "mock",
     "users" : {
         "liyon" :{
-           "roles" : ["Viewer"]
+           "roles" : ["Viewer"],
+           "userAttributes":{
+            "BankName" : [ "My Bank of San Francisco" ],
+            "Country" : ["US"]
+           }
         },
         "marx" : {
-           "roles" : ["Editor"]
+           "roles" : ["Editor","Viewer"],
+           "userAttributes":{
+            "BankName" : [ "My Bank of San Francisco" ],
+            "Country" : ["DE"]
+           }
         }
     }
    }}
