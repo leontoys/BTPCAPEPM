@@ -36,11 +36,7 @@
       ],
       "attribute-references": [
         {
-          "name": "Country",
-          "default-values": [
-            "US",
-            "DE"
-          ]
+          "name": "Country"
         },
         {
           "name": "BankName"
@@ -55,19 +51,14 @@
         "$XSAPPNAME.Boost"
       ]
     }
-  ],
-  "role-collections": [{
-    "name": "spiderman",
-    "description" : "user viewer collection",
-    "role-template-references": [ "$XSAPPNAME.Viewer" ]
-  }],  
+  ], 
   "authorities": [
     "$ACCEPT_GRANTED_AUTHORITIES"
   ],
   "oauth2-configuration": {
     "token-validity": 900,
     "redirect-uris": [
-      "https://*.cfapps.us10-001.hana.ondemand.com"    
+      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"    
       ]
   },
   "xsenableasyncservice": "true"

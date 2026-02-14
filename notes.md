@@ -23,3 +23,7 @@ cds compile db --to sql
 - cds add hana
 - cds build --production
 - cds deploy --to hana:mickey
+
+# To configure roles
+- Application Security Descriptor Configuration Syntax
+- https://help.sap.com/docs/SAP_HANA_PLATFORM/cf8b4c5847374960a68b55cb86eae013/6d3ed64092f748cbac691abc5fe52985.html?locale=en-US

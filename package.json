@@ -22,24 +22,21 @@
      "url": "db.sqlite"
     }
    },
-   "[production]": {
-    "auth": "xsuaa" 
+   "auth" :   { 
+    "[production]" : {
+    "kind": "xsuaa" 
    },
    "[development]": {
-    "auth": "mocked" ,
+    "strategy" : "mock",
     "users" : {
         "liyon" :{
-           "roles" : ["Viewer"],
-           "userAttributes" : {
-            "BankName" : ["My Bank of San Francisco"]
-           }
+           "roles" : ["Viewer"]
         },
         "marx" : {
-
+           "roles" : ["Editor"]
         }
     }
-   },
-   "auth" : "mocked"
+   }}
   }
  }
 }

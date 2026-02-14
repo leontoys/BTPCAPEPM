@@ -12,6 +12,9 @@ module.exports = cds.service.impl ( async function(){
         }
     })
 
+    this.before('READ', EmployeeSet, async (req) => {
+    console.log("---Before reading---User Attributes:---", req.user.attr);
+  })
 
     this.after('READ',EmployeeSet,(req,res)=>{
         console.log('---after read---',JSON.stringify(res.results))
