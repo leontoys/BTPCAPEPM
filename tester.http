@@ -13,6 +13,7 @@ GET {{baseUrl}}/odata/v4/CatalogService/$metadata
 
 ### to get all employees
 GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet
+Authorization: Basic liyon
 
 ### pagination - first parameter with ? next ones with &
 GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet?$top=2

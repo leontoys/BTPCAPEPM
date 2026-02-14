@@ -29,7 +29,10 @@
     "auth": "mocked" ,
     "users" : {
         "liyon" :{
-            
+           "roles" : ["Viewer"],
+           "userAttributes" : {
+            "BankName" : ["My Bank of San Francisco"]
+           }
         },
         "marx" : {
 

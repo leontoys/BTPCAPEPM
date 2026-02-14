@@ -56,6 +56,11 @@
       ]
     }
   ],
+  "role-collections": [{
+    "name": "spiderman",
+    "description" : "user viewer collection",
+    "role-template-references": [ "$XSAPPNAME.Viewer" ]
+  }],  
   "authorities": [
     "$ACCEPT_GRANTED_AUTHORITIES"
   ],
