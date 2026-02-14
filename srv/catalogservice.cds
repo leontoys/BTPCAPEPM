@@ -3,11 +3,23 @@ using { cappo.cds.cdsviews } from '../db/cdsviews';
 
 //by default the name comes up only till the next upper word
 //so to give it exact name add annotation
-service CatalogService @(path:'CatalogService') {
+service CatalogService @(path:'CatalogService',
+                        requires:'authenticated-user') {
 
-    entity EmployeeSet as projection on master.employees;
 
-    entity AddressSet as projection on master.address;
+    entity EmployeeSet 
+    @(restrict : [
+        {grant:['READ'],to:'Viewer',where:'bankName = $user.BankName'},
+        {grant:['WRITE'],to:'Editor'}
+
+    ])
+    as projection on master.employees;
+
+    entity AddressSet 
+    @(restrict:[
+        {grant:['READ'],to:'Viewer',where:'country = $user.Country'}
+    ])
+    as projection on master.address;
 
     entity BusinessParnterSet as projection on master.businesspartner;
 

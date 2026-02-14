@@ -6,6 +6,7 @@ GET {{baseUrl}}/odata/v4/my/helloworld(input='World')
 
 ### service document
 GET {{baseUrl}}/odata/v4/CatalogService
+Authorization: Basic liyon
 
 ### metadata document
 GET {{baseUrl}}/odata/v4/CatalogService/$metadata

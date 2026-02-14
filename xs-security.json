@@ -1,0 +1,69 @@
+{
+  "xsappname": "mycapapp",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Display",
+      "description": "display"
+    },
+    {
+      "name": "$XSAPPNAME.Edit",
+      "description": "edit"
+    },
+    {
+      "name": "$XSAPPNAME.Boost",
+      "description": "boost"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "Country",
+      "description": "Country of employee",
+      "valueType": "string"
+    },
+    {
+      "name": "BankName",
+      "description": "Bank Name of employee",
+      "valueType": "string"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "View all records",
+      "default-role-name": "Viewer: Authorized to Read All Records",
+      "scope-references": [
+        "$XSAPPNAME.Display"
+      ],
+      "attribute-references": [
+        {
+          "name": "Country",
+          "default-values": [
+            "US",
+            "DE"
+          ]
+        },
+        {
+          "name": "BankName"
+        }
+      ]
+    },
+    {
+      "name": "Editor",
+      "description": "Edit, delete books",
+      "scope-references": [
+        "$XSAPPNAME.Edit",
+        "$XSAPPNAME.Boost"
+      ]
+    }
+  ],
+  "authorities": [
+    "$ACCEPT_GRANTED_AUTHORITIES"
+  ],
+  "oauth2-configuration": {
+    "token-validity": 900,
+    "redirect-uris": [
+      "https://*.cfapps.us10-001.hana.ondemand.com"    
+      ]
+  },
+  "xsenableasyncservice": "true"
+}

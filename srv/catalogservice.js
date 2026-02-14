@@ -45,6 +45,10 @@ module.exports = cds.service.impl ( async function(){
     this.on('boost',async(req,res)=>{
         try {
             console.log(req.params)
+
+            //check authorization programatically
+            req.user.is('Editor') || req.reject(403)
+
             const id = req.params[0]
             const tx = await cds.tx(req)
             await tx.update(POs).with({
