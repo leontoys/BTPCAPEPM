@@ -124,3 +124,8 @@ Content-Type: application/json
 //call function
 ###
 GET  {{baseUrl}}/odata/v4/CatalogService/mostExpensiveOrder()
+
+//bound action
+###
+POST {{baseUrl}}/odata/v4/CatalogService/POs/02BD2137-0890-1EEA-A6C2-BB55C1978999/CatalogService.boost
+Content-Type: application/json

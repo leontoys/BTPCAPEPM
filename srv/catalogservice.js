@@ -41,4 +41,21 @@ module.exports = cds.service.impl ( async function(){
             return 'Server Error'
         }
     })
+
+    this.on('boost',async(req,res)=>{
+        try {
+            console.log(req.params)
+            const id = req.params[0]
+            const tx = await cds.tx(req)
+            await tx.update(POs).with({
+                'gross_amount' : {'+=' : 2000}
+            }).where(id)
+            let result = await tx.read(POs).where(id)
+            return result
+
+        } catch (error) {
+            console.error(error)
+            return 'Server Error'
+        }
+    })
  }) 

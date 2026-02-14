@@ -13,7 +13,12 @@ service CatalogService @(path:'CatalogService') {
 
     //entity ProductSet as projection on master.product;- need to revist the error
 
-    entity POs as projection on transaction.purchaseorder;
+    entity POs as projection on transaction.purchaseorder
+    actions {
+        //bound action as it bound to an instance of PO
+        //we will get the IDs of the POs in our implementation
+        action boost() returns POs
+    }
 
     entity POItems as projection on transaction.poitems;
 
