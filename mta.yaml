@@ -22,7 +22,7 @@ modules:
     requires:
       - name: mycapapp-auth
       - name: srv-api
-        group: destination
+        group: destinations
         properties:
           name: srv-api
           strictSSL: true

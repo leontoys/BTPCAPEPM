@@ -1,18 +1,18 @@
 {
-    "welcomeFile": "/webapp/index.html",
+    "welcomeFile": "webapp/",
     "authenticationMethod" : "route",
     "sessionTimeout" : 100,
     "routes" : 
     [
     {
-        "source": "^/webapp/index.html",
+        "source": "^/webapp/(.*)",
         "target": "$1",
-        "localDir": "/webapp/index.html",
+        "localDir": "webapp/",
         "authenticationType" : "xsuaa"
     },
     {
         "source": "^/(.*)$",
-        "target": "$srv-api",
+        "destination": "$srv-api",
         "authenticationType" : "xsuaa"
     }
 ]
