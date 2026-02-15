@@ -12,7 +12,7 @@
     },
     {
         "source": "^/(.*)$",
-        "destination": "$srv-api",
+        "destination": "srv-api",
         "authenticationType" : "xsuaa"
     }
 ]
