@@ -26,6 +26,7 @@ cds compile db --to sql
 - cds build --production
 - cds deploy --to hana:mickey
 - cdsrc-private.jso contains connection details to container
+- cds watch --hybrid profile
 
 # To configure roles
 - Application Security Descriptor Configuration Syntax
@@ -34,3 +35,14 @@ cds compile db --to sql
 - npm install
 - copy and update xs-security.json
 - create mock strategy and test users with roles in package.json
+
+# Deploy App to Cloud
+- cds add mta
+- cds add xsuaa
+- npm install
+- right click and build mta
+- right click and deploy mtar
+- "cf dmol -i da518ead-0a08-11f1-af6d-eeee0a990376" to check logs
+- cf logs <modulename> --recent
+- get token url, append /oauth/token in, client id, secret from BTP and 
+- call GET from POSTMAN tool using above
