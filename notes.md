@@ -47,4 +47,16 @@ cds compile db --to sql
 - get token url, append /oauth/token in, client id, secret from BTP and 
 - call GET from POSTMAN tool using above
 - Create role collection in BTP and assign to user
-- cds bind -2 mycapapp-auth
+- cds bind -2 mycapapp-auth - to bind our local BAS dev to deployed BTP so that we can test locally
+
+# App Router
+- cd mycapapp/app to go inside app folder where we create app router
+- npm init creates pacage.json
+- npm install @sap/approuter
+- in the package.json add start script ie, start : node node_modules/@sap/approuter/approuter.js
+now we need to add config to tell app router about end points
+- create xs-app.json inside (app) folder  and create routes inside
+- in mta.yaml add ui module
+- build mta.yaml and deploy we can do using cf deploy inside mta_archives folder
+- we can add more users and give role collection and test
+
