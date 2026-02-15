@@ -46,3 +46,5 @@ cds compile db --to sql
 - cf logs <modulename> --recent
 - get token url, append /oauth/token in, client id, secret from BTP and 
 - call GET from POSTMAN tool using above
+- Create role collection in BTP and assign to user
+- cds bind -2 mycapapp-auth
