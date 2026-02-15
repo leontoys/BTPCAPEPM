@@ -44,16 +44,17 @@ GET {{baseUrl}}/odata/v4/CatalogService/EmployeeSet('02BD2137-0890-1EEA-A6C2-BB5
 ### POST operation
 POST {{baseUrl}}/odata/v4/CatalogService/EmployeeSet
 Content-Type: application/json
+Authorization: Basic marx:
 
 {
   "nameFirst": "A R",
   "nameMiddle": null,
-  "nameLast": "Rahman",
+  "nameLast": "Ameen",
   "nameInitials": null,
   "sex": "M",
   "language": "E",
   "phoneNumber": null,
-  "email": "arrahman@info",
+  "email": "arameen@info",
   "loginName": "ARR",
   "currency_code": "USD",
   "salaryAmount": 1000000,

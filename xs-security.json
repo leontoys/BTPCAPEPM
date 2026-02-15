@@ -12,6 +12,14 @@
     {
       "name": "$XSAPPNAME.Boost",
       "description": "boost"
+    },
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Viewer"
+    },
+    {
+      "name": "$XSAPPNAME.Editor",
+      "description": "Editor"
     }
   ],
   "attributes": [
@@ -51,15 +59,15 @@
         "$XSAPPNAME.Boost"
       ]
     }
-  ], 
+  ],
   "authorities": [
     "$ACCEPT_GRANTED_AUTHORITIES"
   ],
   "oauth2-configuration": {
     "token-validity": 900,
     "redirect-uris": [
-      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"    
-      ]
+      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
+    ]
   },
   "xsenableasyncservice": "true"
 }

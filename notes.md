@@ -19,10 +19,13 @@ cds compile db --to sql
 - connect using sql tools in BAS
 
 # Steps to connect to HANA CLOUD DB during design time from BAS
+- use booster to create sap hana cloud subscription and allow connection from all ips
 - cf login
 - cds add hana
+- npm install
 - cds build --production
 - cds deploy --to hana:mickey
+- cdsrc-private.jso contains connection details to container
 
 # To configure roles
 - Application Security Descriptor Configuration Syntax
