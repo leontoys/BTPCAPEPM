@@ -60,3 +60,10 @@ now we need to add config to tell app router about end points
 - build mta.yaml and deploy we can do using cf deploy inside mta_archives folder
 - we can add more users and give role collection and test
 
+# Configure Identity Services
+- Add Cloud Identity Services in instances and subscription
+- https://bulkresizephotos.com/ for resizing logo
+- To use buildworkzone it is mandadtory to use Cloud Identity 
+- Create new user in User Management with different identity
+- Establish Trust to new domain
+
