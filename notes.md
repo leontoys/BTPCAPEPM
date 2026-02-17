@@ -70,4 +70,7 @@ now we need to add config to tell app router about end points
 
 # labeling
 - i18n file to be created in db folder
+- GEThttps://port4004-workspaces-ws-yebxs.us10.trial.applicationstudio.cloud.sap/liyon.po.managepo/index.html?sap-ui-language=ml
+
+
 
