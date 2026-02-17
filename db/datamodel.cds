@@ -44,7 +44,7 @@ context master {
         //ie, address_guid_node_key
         address_guid : Association to address;
         bp_id : String(32);
-        company_name : String(250);
+        company_name : String(250) @title : '{i18n>CO_NAME}';
     }
 
     entity address {
@@ -53,7 +53,7 @@ context master {
         postal_code : String(8);
         street : String(44);
         building : String(128);
-        country : String(44);
+        country : String(44) @title : '{i18n>COUNTRY}';
         address_type : String(44);
         val_start_date : Date;
         val_end_date : Date;
@@ -92,10 +92,10 @@ context master {
 
 context transaction {
     entity purchaseorder : cuid, common.Amount {
-        po_id : String(40);
+        po_id : String(40) @title : '{i18n>PO_ID}';
         partner_guid : Association to master.businesspartner;
         lifecycle_status : String(1);
-        overall_status : String(1);
+        overall_status : String(1) @title : '{i18n>STATUS}';
         //composition - tight coupling
         //this will not create 
         items : Composition of many poitems on 

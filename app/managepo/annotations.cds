@@ -5,7 +5,9 @@ annotate service.POs with @(
         po_id,
         gross_amount,
         currency_code,
-        overall_status
+        overall_status,
+        partner_guid.address_guid.country,
+        partner_guid.company_name
     ],
     UI.LineItem : [
         {
@@ -14,7 +16,11 @@ annotate service.POs with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : partner_guid_node_key
+            Value : partner_guid.company_name
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : partner_guid.address_guid.country
         },
         {
             $Type : 'UI.DataField',
@@ -28,5 +34,10 @@ annotate service.POs with @(
             $Type : 'UI.DataField',
             Value : overall_status
         }
-    ]
+    ],
+    UI.HeaderInfo :
+        { TypeName : 'Purchase Order',
+            TypeNamePlural : 'Purchase Orders'
+        }
+
 );

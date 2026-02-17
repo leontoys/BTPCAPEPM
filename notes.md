@@ -68,3 +68,6 @@ now we need to add config to tell app router about end points
 - Establish Trust to new domain
 - Give role collection to new user
 
+# labeling
+- i18n file to be created in db folder
+
