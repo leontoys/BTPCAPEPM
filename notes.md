@@ -66,4 +66,5 @@ now we need to add config to tell app router about end points
 - To use buildworkzone it is mandadtory to use Cloud Identity 
 - Create new user in User Management with different identity
 - Establish Trust to new domain
+- Give role collection to new user
 
