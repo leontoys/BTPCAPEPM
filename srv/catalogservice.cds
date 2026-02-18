@@ -33,7 +33,14 @@ service CatalogService @(path:'CatalogService',
             when 'X' then 'Rejected'
             when 'N' then 'New'
             else 'Pending'
-        end as overall_status_text : String(10)
+        end as overall_status_text : String(10),
+        //icon
+        case overall_status
+        when 'A' then 3
+        when 'X' then 2
+        when 'N' then 2
+        else 2
+        end as overall_status_icon : Integer,
     }
     actions {
         //bound action as it bound to an instance of PO
