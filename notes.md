@@ -72,5 +72,10 @@ now we need to add config to tell app router about end points
 - i18n file to be created in db folder
 - GEThttps://port4004-workspaces-ws-yebxs.us10.trial.applicationstudio.cloud.sap/liyon.po.managepo/index.html?sap-ui-language=ml
 
+# Deploy Fiori App to Cloud
+- add route to managepo in app router config 
+- make sure mta.yaml has 'app' info
+- do mta build and deploy
+
 
 

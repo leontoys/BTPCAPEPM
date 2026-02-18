@@ -5,6 +5,12 @@
     "routes" : 
     [
     {
+        "source": "^/managepo/(.*)",
+        "target": "$1",
+        "localDir": "managepo/",
+        "authenticationType" : "xsuaa"
+    },
+    {
         "source": "^/webapp/(.*)",
         "target": "$1",
         "localDir": "webapp/",
