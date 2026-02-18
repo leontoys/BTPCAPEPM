@@ -27,7 +27,8 @@
           "users": {
             "liyon": {
               "roles": [
-                "Viewer"
+                "Viewer",
+                "Editor"
               ],
               "userAttributes": {
                 "BankName": [

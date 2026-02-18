@@ -27,6 +27,12 @@ annotate service.POs with @(
             Value : gross_amount
         },
         {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'CatalogService.boost',
+            Label : 'boost',
+            Inline : true
+        },
+        {
             $Type : 'UI.DataField',
             Value : currency_code
         },
