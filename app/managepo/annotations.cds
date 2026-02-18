@@ -32,7 +32,7 @@ annotate service.POs with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : overall_status
+            Value : overall_status_text
         }
     ],
     UI.HeaderInfo :

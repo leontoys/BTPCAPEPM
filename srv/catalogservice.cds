@@ -26,7 +26,15 @@ service CatalogService @(path:'CatalogService',
 
     //entity ProductSet as projection on master.product;- need to revist the error
 
-    entity POs as projection on transaction.purchaseorder
+    entity POs as projection on transaction.purchaseorder{
+        *,
+        case overall_status
+            when 'A' then 'Approved'
+            when 'X' then 'Rejected'
+            when 'N' then 'New'
+            else 'Pending'
+        end as overall_status_text : String(10)
+    }
     actions {
         //bound action as it bound to an instance of PO
         //we will get the IDs of the POs in our implementation
