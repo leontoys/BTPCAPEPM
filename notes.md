@@ -77,5 +77,11 @@ now we need to add config to tell app router about end points
 - make sure mta.yaml has 'app' info
 - do mta build and deploy
 
+# Creating dev,qlt,prd
+- Create qlt, prd spaces in subaccount
+- Go to HANA Cloud instance -> configuration -> instance mapping -> 
+manage configuration -> instance mapping -> sigin to cloud foundry
+- A button 'add mapping' appears
+- select the spaces and add mapping
 
 
