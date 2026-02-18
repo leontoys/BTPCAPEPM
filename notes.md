@@ -84,4 +84,16 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 - A button 'add mapping' appears
 - select the spaces and add mapping
 
+# CI/CD
+- Subscribe to Continuous Integration Delivery Service
+- Grant the admin user CICD developer and admin roles
+- Launch the service
+- create credentials for btp a/c
+- create credentials for github
+- Now add github repo to be used for ci/cd
+- generate webhook credentials in BTP, keep this safe, click on add
+- from webhook data get payload url
+- go to github repo->settings->webhook and give webhook url and credentials, make application/json
+- the webhook in github repo will turn green if success
+- create job in BTP, go to resources and give API endpoint, org, 
 
