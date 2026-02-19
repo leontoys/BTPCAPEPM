@@ -98,9 +98,12 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 - create job in BTP, go to resources and give API endpoint, org, 
 
 # Cloud Transport Service
-- subscribe to CTS service, grant the roles?
-- Create a role collection. To allow user? to access the app
-- Create service and update that in CI service
+- subscribe to CTS service - both subscription and instance
+- add CTS admin to your user 
+- Create a new role collection to create approve/reject Transport request 
+- ie,To allow user to access the app
+- Create service key in instance of CTS
+- and update that in CI service
 - Configure landscape dev-qlt-prod
 - Create destination for Q and P
 - Enable the job to perform transport action
