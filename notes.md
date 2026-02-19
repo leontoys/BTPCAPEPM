@@ -97,3 +97,11 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 - the webhook in github repo will turn green if success
 - create job in BTP, go to resources and give API endpoint, org, 
 
+# Cloud Transport Service
+- subscribe to CTS service, grant the roles?
+- Create a role collection. To allow user? to access the app
+- Create service and update that in CI service
+- Configure landscape dev-qlt-prod
+- Create destination for Q and P
+- Enable the job to perform transport action
+
