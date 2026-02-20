@@ -110,4 +110,5 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 - Go to CTMS subscription and Configure landscape dev-qlt-prod 
 - ie, Create nodes in CTMS for quality and prod and connect qlt to prod
 - Enable the job to perform transport action in CI service
+- Note : First import failed, retrying after fixing the extra slash in the destination
 
