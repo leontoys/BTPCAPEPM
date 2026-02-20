@@ -111,4 +111,10 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 - ie, Create nodes in CTMS for quality and prod and connect qlt to prod
 - Enable the job to perform transport action in CI service
 - Note : Retry 3 transport request
+- domain - us10-001.hana.ondemand.com
+- quality - 33350394-cd1c-49e6-8911-b8ad5dd8f5b2
+- production - d5b37c77-09b4-45ec-952d-453571102e7d
+- https://deploy-service.cf.us10-001.hana.ondemand.com/slprot/33350394-cd1c-49e6-8911-b8ad5dd8f5b2/slp
+- https://deploy-service.cf.us10-001.hana.ondemand.com/slprot/d5b37c77-09b4-45ec-952d-453571102e7d/slp
+
 
