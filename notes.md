@@ -99,12 +99,15 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 
 # Cloud Transport Service
 - subscribe to CTS service - both subscription and instance
-- add CTS admin to your user 
-- Create a new role collection to create approve/reject Transport request 
-- ie,To allow user to access the app
+- add CTS admin role collection to your user 
+- Create a new role collection to create approve/reject Transport request ie,To allow user to access the app
+- ie,Go to security role collections - select Transport Operator - alm roles
 - Create service key in instance of CTS
-- and update that in CI service
-- Configure landscape dev-qlt-prod
-- Create destination for Q and P
-- Enable the job to perform transport action
+- and update that in CI service go to credentials in CI service
+- Create destination for qlt and prod
+- https://help.sap.com/docs/cloud-transport-management/sap-cloud-transport-management/create-transport-destinations?locale=en-US
+- Note down domain, org guid, space guid
+- Go to CTMS subscription and Configure landscape dev-qlt-prod 
+- ie, Create nodes in CTMS for quality and prod and connect qlt to prod
+- Enable the job to perform transport action in CI service
 
