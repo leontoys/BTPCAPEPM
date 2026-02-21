@@ -117,4 +117,18 @@ manage configuration -> instance mapping -> sigin to cloud foundry
 - https://deploy-service.cf.us10-001.hana.ondemand.com/slprot/33350394-cd1c-49e6-8911-b8ad5dd8f5b2/slp
 - https://deploy-service.cf.us10-001.hana.ondemand.com/slprot/d5b37c77-09b4-45ec-952d-453571102e7d/slp
 
+# Serverless Fiori App
+- create a new destination for CAPM srv. We have to create separate for dev,q and p 
+- The type should be oAuth2UserTokenExchange
+- Read client id, secret etc from mycap auth dev service bind
+- test in Bas - user: mycapapp $ curl MyCapAppDest.dest
+dial tcp: lookup MyCapAppDest.dest on 100.64.0.10:53: no such host
+- Note - This started working the next day without any change
+
+# Build Workzone
+- watch video sap build workzone subscription failed
+- create cloud identity services subscription
+- create build workzone subscription
+- add launchpad roles to admin to use this service
+- 
 
