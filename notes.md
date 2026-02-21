@@ -129,6 +129,10 @@ dial tcp: lookup MyCapAppDest.dest on 100.64.0.10:53: no such host
 - watch video sap build workzone subscription failed
 - create cloud identity services subscription
 - create build workzone subscription
+- it creates 2 entries for admin in user in the users section
 - add launchpad roles to admin to use this service
+- create site from buildwokrzone
+- if you get error deploying, do it via cf CLI
+- Site directory -> Channel manager and Refresh
 - 
 
