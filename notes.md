@@ -138,3 +138,12 @@ dial tcp: lookup MyCapAppDest.dest on 100.64.0.10:53: no such host
 - Create catalog, group, role
 - Add role to the user from user management
 
+# Side by Side Extension
+- https://github.com/SAP-samples/teched2023-AD264/tree/main/exercises/ex2
+- https://learning.sap.com/courses/develop-extensions-with-cap-following-the-sap-btp-developer-s-guide/exercise-adding-an-external-service_d73e2e9b-3002-41dc-bb0b-b390048eaf4c
+- https://developers.sap.com/tutorials/remote-service-intro.html
+- https://community.sap.com/t5/technology-blog-posts-by-sap/develop-a-side-by-side-cap-based-extension-application-following-the-sap/ba-p/13720441
+- https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-build-side-by-side-extensions-for-sap-s-4hana-public-cloud-with-sap/ba-p/
+- https://github.com/SAP-samples/btp-side-by-side-extension-learning-journey
+- https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-build-side-by-side-extensions-for-sap-s-4hana-public-cloud-with-sap/ba-p/14235644
+
