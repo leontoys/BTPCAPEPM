@@ -133,6 +133,8 @@ dial tcp: lookup MyCapAppDest.dest on 100.64.0.10:53: no such host
 - add launchpad roles to admin to use this service
 - create site from buildwokrzone
 - if you get error deploying, do it via cf CLI
-- Site directory -> Channel manager and Refresh
-- 
+- Site directory -> Channel manager and Refresh. This failed
+- We can also add CAP ui apps manually
+- Create catalog, group, role
+- Add role to the user from user management
 
